@@ -1,0 +1,42 @@
+\documentclass[tikz,dvipsnames]{standalone}
+\usepackage{tikz-feynman}
+
+\makeatletter
+\tikzfeynmanset{
+  fermion2/.style={
+    /tikz/postaction={
+      /tikz/decoration={
+        markings,
+        mark=at position 0.7 with {
+          \arrow{>[length=3.5pt, width=3pt]};
+        },
+      },
+      /tikz/decorate=true,
+    },
+  },
+}
+\makeatother
+
+\begin{document}
+
+\begin{tikzpicture}
+    \begin{feynman}
+        \vertex (a);
+        \vertex[above left = 0.35cm of a] (h1);
+        \vertex[above right = 0.35cm of a] (h2);    
+        \vertex[below left =0.35cm of a] (g1);
+        \vertex[below right =0.35cm of a] (g2); 
+        \vertex[above left =  0.65cm of h1, label=above:{\footnotesize \(p_1\)}] (i1);
+        \vertex[above right = 0.65cm of h2, label=above:{\footnotesize \(p_3\)}] (i2);    
+        \vertex[below left = 0.65cm of g1, label=below:{\footnotesize \(p_2\)}] (f1);
+        \vertex[below right = 0.65cm of g2,label=below:{\footnotesize \(p_4\)}] (f2); 
+        \diagram*{(i1) --[fermion2] (h1),
+                    (h2) --[fermion2] (i2),
+                    (g2) --[fermion2] (f2),
+                    (f1) --[fermion2] (g1)};
+        \filldraw[NavyBlue!55] (a) circle (0.35cm) ;
+        \draw[NavyBlue,thick]  (a) circle (0.35cm) ;
+    \end{feynman}
+\end{tikzpicture}
+
+\end{document}
