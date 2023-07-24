@@ -1,0 +1,22 @@
+\documentclass[tikz,dvipsnames]{standalone}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+
+    \tikzfeynmanset{
+    every vertex/.style={NavyBlue, dot}}
+
+    \feynmandiagram[layered layout]{
+        {[same layer] i1 [particle=\textcolor{Black}{\(N\)}]--[anti fermion] a-- [anti  fermion] i2 [particle=\textcolor{Black}{\(N\)}]},
+
+        a --[boson, edge label'=\(\mathbb{P}\)] b,
+        b--[scalar,half left,looseness=1.75,edge label=\(\pi\)] c
+        --[scalar,half left,looseness=1.75,edge label=\(\pi\)] b,
+        c--[boson,edge label'=\(\mathbb{P}\)] d,
+        
+        {[same layer] i3 [particle=\textcolor{Black}{\(N\)}]-- [anti fermion] d -- [anti fermion] i4 [particle=\textcolor{Black}{\(N\)}]},
+    };
+
+\end{document}
