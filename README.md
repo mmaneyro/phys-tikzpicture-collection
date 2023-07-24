@@ -6,14 +6,10 @@ Compiled with LuaLaTex
 
 Proton Collision
 
-![Proton collisions](QCD-ProtonScattering/Proton_collisions-1.png)  
+<img src='QCD-ProtonScattering/Proton_collisions-1.png' style="width:400px;"/>  
 
 
 Scattering channel kinematic domains
 
-![Knematic domains](QCD-ProtonScattering/Mandelstam_domains-1.png)  
+<img src='QCD-ProtonScattering/Mandelstam_domains-1.png' style="width:400px;"/>  
 
-
-2->2 Scattering
-
-![2_>2 scattering](QCD-ProtonScattering//2->2%20scattering-1.png)
