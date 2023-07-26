@@ -1,0 +1,16 @@
+\documentclass[tikz]{standalone}
+
+
+\begin{document}
+
+\begin{tikzpicture}
+    \node[label=above:$m^2$] (a) at (0,0) {$\bullet$};
+    \node[label=above:$4m^2$] (b) at (4,0) {$\bm{\times}$};
+    \node[label=above:$9m^2$] (c) at (9,0.2) {$\bm{\times}$};
+    \node (d) at (12,0) {};
+    \node (e) at (12,0.2) {};
+    \draw[very thick] (b.center)--(d);
+    \draw[very thick] (c.center)--(e);
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,44 @@
+\documentclass[tikz]{standalone}
+\usepackage[compat=1.1.0]{tikz-feynman}
+
+\begin{document}
+
+\feynmandiagram [horizontal=a to b,scale=0.9] {
+    i1 [label=below:$p_1$]-- a --  i2 [label=$p_2$],
+    a -- [scalar] b,
+    b -- f2[label=$p_3$],
+    f1 [label=below:$p_4$]--  b};
+
+\feynmandiagram [vertical=a to b,scale=0.9] {
+    i1 [label=$p_1$]--  a -- i2[label=$p_3$],
+    a -- [scalar] b,
+    b -- f2[label=below:$p_4$],
+    f1 [label=below:$p_2$]--  b};
+
+\begin{tikzpicture}[scale=0.8]
+    \begin{feynman}
+        \vertex (a);
+        \vertex[left = 0.5cm of a] (b);
+        \vertex[above  = 0.7cm of b] (h1);
+        \vertex[below =0.7cm of b] (g1);
+
+        \vertex[right = 0.5cm of a] (c);
+        \vertex[above = 0.4cm of c] (h2);    
+        \vertex[below = 0.4cm of c] (g2); 
+
+        \vertex[above =  0.5cm of h1] (d);       
+        \vertex[below =  0.5cm of g1] (e);   
+
+        \vertex[left =  of d, label=above:{\(p_1\)}] (i1);
+        \vertex[above right = of h2, label=above:{\(p_3\)}] (i2);    
+        \vertex[left = of e, label=below:{\(p_2\)}] (f1);
+        \vertex[below right = of g2,label=below:{\(p_4\)}] (f2); 
+        \diagram*{(i1) -- (h1),
+                 (g1) -- (i2),
+                 (h1) -- (f2),
+                 (f1) -- (g1),
+                 (h1) --[scalar](g1)};
+    \end{feynman}    
+\end{tikzpicture}
+
+\end{document}

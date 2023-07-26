@@ -1,0 +1,66 @@
+\documentclass[tikz,dvipsnames]{standalone}
+\usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{amsmath} 
+\usepackage{amssymb}
+% \usepackage{amsfonts}
+% \usepackage{bm}
+
+\begin{document}
+
+\begin{tikzpicture}    
+
+    \begin{feynman}
+    
+        \vertex (a){};
+        \vertex[label=left:\(p\)] (i1) [left = 1.75cm of a]{};
+        \vertex[label=right:\(p\)] (i2) [right = 1.75cm of a]{};
+
+        \vertex (b) [below= 4cm of a]{};
+        \vertex[label=left:\(p\)] (i3) [left= 1.75cm of b]{};
+        \vertex[label=right:\(p\)] (i4) [right= 1.75cm of b] {};
+ 
+        \vertex (g) [below= 1.3cm of a]{};
+        \vertex (h) [below= 2.7cm of a]{};
+        \vertex (i) [right= 0.35cm of g]{};
+        \vertex (j) [right= 0.35cm of h]{};
+        \vertex (k) [right= 2.0cm of g]{};
+        \vertex (l) [right= 2.0cm of h]{};
+        \vertex (m) [right= 1.0cm of k]{};
+        \vertex[label=right:$\pi^-$] (n) [above= 0.5cm of m]{};
+        \vertex[label=right:$\pi^+$] (o) [below= 0.5cm of m]{};
+        \vertex (p) [right= 1.0cm of l]{};
+        \vertex[label=right:$\pi^-$] (q) [above= 0.5cm of p]{};
+        \vertex[label=right:$\pi^+$] (r) [below= 0.5cm of p]{};
+
+        \diagram*{
+        (i1) -- [fermion] (a.center)-- [fermion] (i2),
+
+        (a.center) --[boson, edge label'=\(\mathbb{P}\)] (i.center),
+
+        (i.center) --[scalar, edge label'=\(\rho\)] (j.center),
+
+        (i.center) --[scalar, edge label=\(\rho\)] (k.center),
+
+        (j.center) --[scalar, edge label'=\(\rho\)] (l.center),
+
+        (j.center) --[boson, edge label'=\(\mathbb{P}\)] (b.center),
+
+        (k.center) --[charged scalar] (n),
+        (k.center) --[anti charged scalar] (o),
+        (l.center) --[charged scalar] (q),
+        (l.center) --[anti charged scalar] (r),
+        
+        (i3) -- [fermion] (b.center)-- [fermion] (i4) };
+    \end{feynman}
+
+
+\node at (a) {\textcolor{NavyBlue}{$\bullet$}};
+\node at (b) {\textcolor{NavyBlue}{$\bullet$}};
+\node at (i) {\textcolor{NavyBlue}{$\bullet$}};
+\node at (j) {\textcolor{NavyBlue}{$\bullet$}};
+\node at (k) {\textcolor{NavyBlue}{$\bullet$}};
+\node at (l) {\textcolor{NavyBlue}{$\bullet$}};
+
+\end{tikzpicture}
+
+\end{document}

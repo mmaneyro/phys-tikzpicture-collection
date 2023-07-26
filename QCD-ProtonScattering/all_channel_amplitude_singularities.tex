@@ -1,0 +1,23 @@
+\documentclass[tikz]{standalone}
+
+\begin{document}
+
+\begin{tikzpicture}
+    \node[label=above:\small{$m^2$}] (a) at (0,0) {$\bullet$};
+    \node[label=above:\small{$4m^2$}] (b) at (1.5,0) {$\bm{\times}$};
+    \node[label=above:\small{$9m^2$}] (c) at (3.5,0.2){$\bm{\times}$};
+    \node (d) at (6,0) {};
+    \node (e) at (6,0.2) {};
+    \draw[very thick] (b.center)--(d);
+    \draw[very thick] (c.center)--(e);
+
+    \node[label=above:\small{$3m^2-t$}] (a) at (-1.7,0) {$\bullet$};
+    \node[label=above:\small{$-t$}] (b) at (-3.7,0) {$\bm{\times}$};
+    \node[label=above:\small{$-t-5m^2$}] (c) at (-5.7,0.2) {$\bm{\times}$};
+    \node (d) at (-7.5,0) {};
+    \node (e) at (-7.5,0.2) {};
+    \draw[very thick] (b.center)--(d);
+    \draw[very thick] (c.center)--(e);
+\end{tikzpicture}
+
+\end{document}

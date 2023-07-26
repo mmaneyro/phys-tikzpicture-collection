@@ -1,0 +1,13 @@
+\documentclass[tikz,dvipsnames]{standalone}
+
+\usepackage{tikz-feynman}
+
+\begin{document}
+
+\feynmandiagram [horizontal=a to b, scale=1.2] {
+i1 [label=right:\textcolor{PineGreen}{\tiny{q}}]-- [fermion, PineGreen, very thick] a -- [fermion, NavyBlue, very thick] i2[label=right:\textcolor{NavyBlue}{\tiny{q}}],
+a -- [gluon, PineGreen!50!NavyBlue!90, very thick, edge label'=\tiny{gluon}, edge label=\tiny{green-antiblue}] b,
+b --[fermion, PineGreen, very thick] f2[label=left:\textcolor{PineGreen}{\tiny{q}}],
+f1 [label=left:\textcolor{NavyBlue}{\tiny{q}}]-- [fermion, NavyBlue, very thick] b};
+
+\end{document}
