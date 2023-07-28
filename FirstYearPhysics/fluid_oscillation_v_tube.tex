@@ -1,0 +1,20 @@
+\documentclass[tikz,dvipsnames]{standalone}
+
+\begin{document}
+
+\begin{tikzpicture}
+    \draw[loosely dashed, very thin] (-2.5,0)-- (1.95,0);
+    \fill[blue!70!green!50,rotate=40] (0,0) rectangle ++(3,0.4);
+    \fill[blue!70!green!50,rotate=148] (0,-0.4) rectangle ++(3.5,0.4);
+    \fill[white] (-3,1.8) rectangle ++(6,0.7); 
+    \draw (0,0) --++(40:3.8) ;
+    \draw (-0.025,0.5) --++(40:3.5) ;
+    \draw (0,0.003) --++(148:4.6) ;
+    \draw (-0.024,0.49) --++(148:4.3) ;  
+    \fill[white] (-4,2.4) rectangle ++(7,0.4); 
+    \draw[loosely dashed,very thin] (-3.1,1.8)-- (2.5,1.8);
+    \draw [-latex] (0.75,0) arc (0:40:0.75) node[midway,label={[shift={(0.35,-0.35)}]\small{$40^\circ$}}] {};
+    \draw [-latex] (-0.75,0) arc (180:148:0.75) node[midway,label={[shift={(-0.33,-0.35)}]\small{$30^\circ$}}] {};
+\end{tikzpicture}
+    
+\end{document}
